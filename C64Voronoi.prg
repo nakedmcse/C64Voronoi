@@ -33,6 +33,6 @@
 170 if b>d then b = d : c = v
 180 next v
 190 rem plot (offset is (1024 + (y * 40) + x))
-200 poke o(m), c
+200 poke o(ml), c
 210 next ml
 220 goto 220
