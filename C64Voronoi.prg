@@ -22,8 +22,8 @@
 78 next i
 79 poke 53280, 2
 80 rem main loop
-90 for m = 1 to 1000
-100 y = int((o(m)-1024) / 40) : x = (o(m)-1024)-(y*40)
+90 for ml = 1 to 1000
+100 y = int((o(ml)-1024) / 40) : x = (o(ml)-1024)-(y*40)
 110 b = m * n
 120 c = 0
 130 for v = 1 to 8
@@ -34,5 +34,5 @@
 180 next v
 190 rem plot (offset is (1024 + (y * 40) + x))
 200 poke o(m), c
-210 next m
+210 next ml
 220 goto 220
