@@ -29,7 +29,8 @@
 130 for v = 1 to 8
 140 rem p(v,1) = p(v,1) + (rc * 0.2) - 0.1
 150 rem p(v,2) = p(v,2) + (rd * 0.2) - 0.1
-160 d = (x - p(v,1))^2 + (y - p(v,2))^2
+160 rem real distance d = (x - p(v,1))^2 + (y - p(v,2))^2
+161 d = abs(x - p(v,1)) + abs(y - p(v,2))
 170 if b>d then b = d : c = v
 180 next v
 190 rem plot (offset is (1024 + (y * 40) + x))
