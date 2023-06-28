@@ -12,8 +12,8 @@
 80 y=int(45+40*sin(x/10)) : rem equation for sine wave
 90 ch=int(x/8) : rem character position of x
 100 ro=int(y/8) : rem row postion of y
-110 ln=y and 3 : rem line in row
-120 by=base+ro*160+4*ch+ln : rem byte location
+110 ln=y and 7 : rem line in row
+120 by=base+ro*320+8*ch+ln : rem byte location
 130 bi=3-(x and 3) : rem pixel in byte
 140 poke by,peek(by) or (2^bi) : rem set bit in byte
 150 next x
