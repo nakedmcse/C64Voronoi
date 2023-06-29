@@ -17,6 +17,15 @@
 140 gosub 1000 : rem plot point
 150 x = 79 : y = 99 : co = 3 : rem set variables for (79,99, color 3)
 160 gosub 1000 : rem plot point
+161 x=0:y=4:co=1:gosub 1000:rem draw line
+162 x=1:y=4:co=1:gosub 1000:rem draw line
+163 x=2:y=4:co=1:gosub 1000:rem draw line
+164 x=3:y=4:co=1:gosub 1000:rem draw line
+165 x=4:y=4:co=1:gosub 1000:rem draw line
+166 x=5:y=4:co=1:gosub 1000:rem draw line
+167 x=6:y=4:co=1:gosub 1000:rem draw line
+168 x=7:y=4:co=1:gosub 1000:rem draw line
+169 x=8:y=4:co=1:gosub 1000:rem draw line
 170 goto 170 : rem Loop to hold screen
 900 rem plot point subroutine
 1000 x = x * 2
@@ -26,7 +35,8 @@
 1400 by=base+ro*320+8*ch+ln : rem byte location
 1500 bi=7-(x and 7) : rem pixel in byte
 1600 co = co * (2^bi) : rem shift color to bit posn
-1700 ma = not co : rem invert color for mask
-1800 va = peek(by) and ma : rem apply mask to clear bits
-1900 poke by,va or co : rem set color bits
-2000 return
+1700 ma = 3 * (2^bi) : rem set two bits at bit posn
+1800 ma = not ma : rem invert to give us mask
+1900 va = peek(by) and ma : rem apply mask to clear bits
+2000 poke by,va or co : rem set color bits
+2100 return
