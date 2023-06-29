@@ -17,15 +17,15 @@
 140 gosub 1000 : rem plot point
 150 x = 79 : y = 99 : co = 3 : rem set variables for (79,99, color 3)
 160 gosub 1000 : rem plot point
-161 x=0:y=4:co=1:gosub 1000:rem draw line
-162 x=1:y=4:co=1:gosub 1000:rem draw line
-163 x=2:y=4:co=1:gosub 1000:rem draw line
-164 x=3:y=4:co=1:gosub 1000:rem draw line
-165 x=4:y=4:co=1:gosub 1000:rem draw line
-166 x=5:y=4:co=1:gosub 1000:rem draw line
-167 x=6:y=4:co=1:gosub 1000:rem draw line
-168 x=7:y=4:co=1:gosub 1000:rem draw line
-169 x=8:y=4:co=1:gosub 1000:rem draw line
+161 x=0:y=9:co=1:gosub 1000:rem draw line
+162 x=1:y=9:co=2:gosub 1000:rem draw line
+163 x=2:y=9:co=2:gosub 1000:rem draw line
+164 x=3:y=9:co=2:gosub 1000:rem draw line
+165 x=4:y=9:co=2:gosub 1000:rem draw line
+166 x=5:y=9:co=2:gosub 1000:rem draw line
+167 x=6:y=9:co=2:gosub 1000:rem draw line
+168 x=7:y=9:co=2:gosub 1000:rem draw line
+169 x=8:y=9:co=1:gosub 1000:rem draw line
 170 goto 170 : rem Loop to hold screen
 900 rem plot point subroutine
 1000 x = x * 2
