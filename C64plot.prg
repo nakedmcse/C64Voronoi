@@ -36,7 +36,7 @@
 1500 bi=7-(x and 7) : rem pixel in byte
 1600 co = co * (2^bi) : rem shift color to bit posn
 1700 ma = 3 * (2^bi) : rem set two bits at bit posn
-1800 ma = not ma : rem invert to give us mask
+1800 ma = not ma and 255: rem invert to give us mask
 1900 va = peek(by) and ma : rem apply mask to clear bits
 2000 poke by,va or co : rem set color bits
 2100 return
