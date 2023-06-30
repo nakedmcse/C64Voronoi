@@ -19,13 +19,13 @@
 160 gosub 1000 : rem plot point
 161 x=0:y=9:co=1:gosub 1000:rem draw line
 162 x=1:y=9:co=2:gosub 1000:rem draw line
-163 x=2:y=9:co=2:gosub 1000:rem draw line
-164 x=3:y=9:co=2:gosub 1000:rem draw line
-165 x=4:y=9:co=2:gosub 1000:rem draw line
-166 x=5:y=9:co=2:gosub 1000:rem draw line
-167 x=6:y=9:co=2:gosub 1000:rem draw line
-168 x=7:y=9:co=2:gosub 1000:rem draw line
-169 x=8:y=9:co=1:gosub 1000:rem draw line
+163 x=2:y=10:co=2:gosub 1000:rem draw line
+164 x=3:y=10:co=2:gosub 1000:rem draw line
+165 x=4:y=11:co=3:gosub 1000:rem draw line
+166 x=5:y=11:co=3:gosub 1000:rem draw line
+167 x=6:y=12:co=2:gosub 1000:rem draw line
+168 x=7:y=12:co=2:gosub 1000:rem draw line
+169 x=8:y=13:co=1:gosub 1000:rem draw line
 170 goto 170 : rem Loop to hold screen
 900 rem plot point subroutine
 1000 x = x * 2
@@ -33,7 +33,7 @@
 1200 ro=int(y/8) : rem row postion of y
 1300 ln=y and 7 : rem line in row
 1400 by=base+ro*320+8*ch+ln : rem byte location
-1500 bi=7-(x and 7) : rem pixel in byte
+1500 bi=7-(x and 7)-1 : rem pixel in byte (-1 because 7 is first position)
 1600 co = co * (2^bi) : rem shift color to bit posn
 1700 ma = 3 * (2^bi) : rem set two bits at bit posn
 1800 ma = not ma and 255: rem invert to give us mask
