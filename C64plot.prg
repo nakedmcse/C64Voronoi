@@ -40,11 +40,11 @@
 1300 ln=y and 7 : rem line in row
 1400 by=base+ro*320+8*ch+ln : rem byte location
 1500 bi=7-(x and 7)-1 : rem pixel in byte (-1 because 7 is first position)
-1600 co = co * (2^bi) : rem shift color to bit posn
+1600 cs = co * (2^bi) : rem shift color to bit posn
 1700 ma = 3 * (2^bi) : rem set two bits at bit posn
 1800 ma = not ma and 255: rem invert to give us mask
 1900 va = peek(by) and ma : rem apply mask to clear bits
-2000 poke by,va or co : rem set color bits
+2000 poke by,va or cs : rem set color bits
 2100 return
 2900 rem draw line subroutine
 2910 dx = abs(x2-x1) : dy = abs(y2-y1) : rem diff points
@@ -52,8 +52,7 @@
 2930 mx = (x2-x1)/ll : my = (y2-y1)/ll : rem slopes in x and y
 2940 xc = x1 : yc = y1 : rem starting point
 2950 for ls=0 to ll
-2960 oc=co:x=int(xc):y=int(yc):gosub 1000: rem plot point
-2965 co=oc:rem restore color
+2960 x=int(xc):y=int(yc):gosub 1000: rem plot point
 2970 xc = xc + mx : yc = yc + my : rem move point
 2980 next ls
 2990 return
