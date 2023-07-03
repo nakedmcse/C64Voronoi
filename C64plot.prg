@@ -26,10 +26,12 @@
 167 x=6:y=12:co=2:gosub 1000:rem draw line
 168 x=7:y=12:co=2:gosub 1000:rem draw line
 169 x=8:y=13:co=1:gosub 1000:rem draw line
-170 x1=79:y1=94:x2=79:y2=84:gosub 2900:rem draw upper line
-171 x1=79:y1=104:x2=79:y2=114:gosub 2900:rem draw lower line
-172 x1=64:y1=99:x2=74:y2=99:gosub 2900:rem draw left line
-173 x1=84:y1=99:x2=94:y2=99:gosub 2900:rem draw right line
+170 x1=79:y1=94:x2=79:y2=84:co=3:gosub 2900:rem draw upper line
+171 x1=79:y1=104:x2=79:y2=114:co=3:gosub 2900:rem draw lower line
+172 x1=64:y1=99:x2=74:y2=99:co=3:gosub 2900:rem draw left line
+173 x1=84:y1=99:x2=94:y2=99:co=3:gosub 2900:rem draw right line
+174 x1=0:y1=199:x2=79:y2=99:co=1:gosub 2900:rem draw left diagonal
+175 x1=159:y1=199:x2=79:y2=99:co=2:gosub 2900:rem draw right diagonal
 800 goto 800 : rem Loop to hold screen
 900 rem plot point subroutine
 1000 x = x + x
@@ -47,10 +49,11 @@
 2900 rem draw line subroutine
 2910 dx = abs(x2-x1) : dy = abs(y2-y1) : rem diff points
 2920 ll = int(sqr(dx^2 + dy^2)) : rem line length
-2930 mx = int((x2-x1)/ll) : my = int((y2-y1)/ll) : rem slopes in x and y
+2930 mx = (x2-x1)/ll : my = (y2-y1)/ll : rem slopes in x and y
 2940 xc = x1 : yc = y1 : rem starting point
 2950 for ls=0 to ll
-2960 x=xc:y=yc:co=3:gosub 1000: rem plot point
+2960 oc=co:x=int(xc):y=int(yc):gosub 1000: rem plot point
+2965 co=oc:rem restore color
 2970 xc = xc + mx : yc = yc + my : rem move point
 2980 next ls
 2990 return
