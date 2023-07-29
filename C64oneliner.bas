@@ -1,0 +1,1 @@
+1 fory=0to25:forx=0to39:d=rnd(1)<.5:poke 1024+(40*y)+x,78+d:next:next
