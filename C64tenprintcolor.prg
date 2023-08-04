@@ -6,9 +6,9 @@
 17 for i=1024 to 2023:poke i,19:next i:rem set colors to white/red
 18 z = rnd(-ti)
 19 for i=55296 to 56295:poke i,int(rnd(1)*12)+3:next i:rem random 3rd color
-20 for yo=0 to 199 step 3:for xo=0 to 159 step 3:d=rnd(1)<.5
-21 x1=xo:y1=yo-d*2:x2=xo+2:y2=yo+(d+1)*2:co=int(rnd(1)*3)+1:gosub 201
-22 next xo: next yo
+40 for yo=0 to 199 step 3:for xo=0 to 156 step 3:d=rnd(1)<.5
+41 x1=xo:y1=yo-d*2:x2=xo+2:y2=yo+(d+1)*2:co=3:gosub 201
+42 next xo: next yo
 99 goto 99 : rem Loop to hold screen
 100 rem plot point subroutine
 101 x = x + x:ch=int(x/8):ro=int(y/8):ln=y and 7
